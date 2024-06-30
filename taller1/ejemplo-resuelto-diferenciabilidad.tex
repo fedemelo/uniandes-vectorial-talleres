@@ -1,0 +1,83 @@
+\documentclass{fmbvecto}
+
+\usepackage[spanish]{babel}
+
+\renewcommand{\title}{Ejemplo resuelto de diferenciabilidad}
+\newcommand{\subject}{Cálculo Vectorial}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+\NewDocumentCommand{\itemp}{o}{\item (#1 puntos)}
+
+\begin{document}
+
+Jueves, 18 de junio de 2024
+
+\begin{center}
+    \textbf{\LARGE \title} \\
+    {\large \subject}
+\end{center}
+
+Monitor: Federico Melo Barrero, \href{mailto:f.melo@uniandes.edu.co}{f.melo@uniandes.edu.co}.\\
+
+Para este ejemplo, se emplea la siguiente condición suficiente:
+
+\begin{gbox}
+    \textbf{Condición suficiente para diferenciabilidad.}\\
+    Sea \(f\colon U\subseteq \mathbb{R}^{2}\to\mathbb{R}\) una función escalar de dos variables y sea \((a,b)\in U\) un punto en su dominio. Si \(f\) y una o ambas de sus primeras derivadas parciales son continuas en un entorno del punto \((a,b)\), entonces  \(f(x,y)\) es diferenciable en \((a,b)\).
+\end{gbox}
+
+Para ello, vale la pena recordar qué es un entorno:
+
+\begin{gbox}
+    \textbf{Definición: Entorno.}\\
+    Sea \(\bvec{v}\in\mathbb{R}^{n}\) un punto y \(\varepsilon \in \mathbb{R}_{>0}\) un escalar. Un \emph{entorno} con centro en \(\bvec{v}\) y radio \(\varepsilon\) se denota por \(B_{\varepsilon}(\bvec{v})\) y es el conjunto dado por
+        \[
+          B_{\varepsilon}(\bvec{v}) \coloneqq \{\bvec{x}\in\mathbb{R}^{n}\colon\norm{\bvec{x}-\bvec{v}} < \varepsilon\}.
+        \]
+\end{gbox}
+
+Por ende, se busca prácticamente que tanto función como una o ambas de sus primeras derivadas parciales sean continuas alrededor del punto para el cuál se quiere determinar si la función es diferenciable.
+
+Ahora, si se quiere demostrar que una función es diferenciable en todo su dominio, se requiere generalizar el raciocinio anterior y demostrar que la función y una o ambas de sus primeras derivadas parciales son continuas en todo su dominio.
+
+Para ello, puede resultar útil el siguiente teorema:
+\begin{gbox}
+    \textbf{Teorema: Continuidad de funciones compuestas.}\\
+    Sean \(f\) y \(g\) funciones. Si \(f\) y \(g\) son continuas en un punto dado y la composición \(f \circ g\) existe, entonces \(f \circ g\) es continua en ese punto dado.
+\end{gbox}
+En general, las operaciones aritméticas entre funciones continuas mantienen su continuidad, de forma que la suma, resta, multiplicación y división de funciones continuas resulta en una función continua.
+
+Por último, se sabe de antemano que algunas familias de funciones son continuas en todo su dominio. Para los talleres del curso, se puede tomar como cierto, sin necesidad de demostrarlo, que:
+\begin{itemize}
+    \item Las funciones polinómicas son continuas en todo su dominio, incluyendo funciones constantes y lineales.
+    \item La función exponencial es continua en todo su dominio.
+    \item La función logarítmica es continua en todo su dominio.
+    \item Las funciones trigonométricas seno y coseno son continuas en todo su dominio.
+\end{itemize}
+
+\pagebreak Con eso en mente, considérese el siguiente ejercicio:
+
+\begin{problema}[Ejemplo resuelto de diferenciabilidad]
+
+Demuestre o refute que \(f(x, y) = \sin(x^2+y^4)\) es diferenciable para cualesquiera \(x, y \in \mathbb{R}\).
+
+\tcblower
+
+\textbf{Prueba}\\
+
+\begin{enumerate}
+    \item Se demuestra primero que la función es continua en todo su dominio. \\\\ Sea \(g(x) \coloneqq \sin(x)\) y \(h(x, y) \coloneqq x^2+y^4\), de forma que \(f(x, y) = g(x) \circ h(x, y)\). Como \(g\) es una función seno y \(h\) es un polinomio, se puede establecer que tanto \(g\) como \(h\) son continuas en todo su dominio, que son todos los números reales. Por ende, \(f\), que es la composición de las dos, es continua en todo su dominio, que es \(\mathbb{R}^2\).\\
+    
+    \item Se demuestra que \(\dparder[f(x, y)]\) es continua. \\\\ Primeramente, se calcula la derivada parcial: \(\dparder[f(x, y)] = 2x \cdot \cos(x^2+y^4)\). Sean \(p(x, y) \coloneqq 2x\) y \(q(x) \coloneqq \cos(x)\), de forma que \(\dparder[f(x, y)] = p(x, y) \cdot (q(x) \circ h(x, y)) \). Teniendo en cuenta que \(p\) y \(h\) son polinomios y que \(q\) es una función coseno, entonces se sabe que las tres son continuas en todo su dominio. Ergo, \(\parder[f(x, y)]\) , que es la composición de las dos, es continua en todo su dominio.\\
+    
+    \item Se demuestra que \(\dparder[f(x, y)][y]\) es continua. \\\\  Igual que antes, se calcula la derivada parcial: \(\dparder[f(x, y)][y] = 4y^3 \cdot \cos(x^2+y^4)\). Sea \(r(x, y) \coloneqq 4x^3\), de forma que \(\dparder[f(x, y)][y] = r(x, y) \cdot (q(x) \circ h(x, y)) \). Por un raciocinio análogo al del numeral anterior, considerando que \(r\) y \(h\) son polinomios y que \(q\) es una función coseno, se concluye que \(\dparder[f(x, y)][y]\) es continua en todo su dominio.\\\\
+
+    Habiendo mostrado que tanto la función como sus dos primeras derivadas parciales son continuas sobre todo \(\mathbb{R}^2\), se demuestra, por la condición suficiente para diferenciabilidad enunciada al principio de este escrito, que \(f(x, y) = \sin(x^2+y^4)\) es diferenciable para cualesquiera \(x, y \in \mathbb{R}\). 
+    \qed
+\end{enumerate}
+
+\end{problema}
+
+\end{document}
