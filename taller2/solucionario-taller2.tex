@@ -1,6 +1,7 @@
 \documentclass{fmbvecto}
 
 \usepackage[spanish]{babel}
+\usepackage{caption}
 
 \renewcommand{\title}{Ejemplo de solución correcta del taller 2}
 \newcommand{\subject}{Cálculo Vectorial}
@@ -9,6 +10,7 @@
 \renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 
 \NewDocumentCommand{\itemp}{o}{\item (#1 puntos)}
+
 
 \begin{document}
 
@@ -44,9 +46,12 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
 
 \begin{problema}[Corrección del taller 1]
     
-    (1 punto) Corrija todos los errores que tuvo en el taller 1. Si no tuvo errores, omita este punto.
+    (1 punto) Corrija todos los errores que tuvo su grupo en el taller 1. Si no tuvo errores, omita este punto.
+
+    \vspace{1em}
+    \tcblower
     
-    En este punto simplemente revisaré que hayan corregido sus errores y abordado los comentarios que dejé en su taller. Naturalmente, la corrección debe ser correcta, sobretodo teniendo en cuenta que el solucionario del taller 1 está en Bloque Neón desde el domingo 23 de junio.
+    En este punto simplemente revisaré que se hayan corregido los errores y abordado los comentarios que dejé en su taller. Naturalmente, la corrección debe ser correcta, sobretodo teniendo en cuenta que el solucionario del taller 1 está en Bloque Neón desde el domingo 23 de junio.
 
 \end{problema}
 
@@ -54,7 +59,7 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
 
 \begin{problema}[Integral doble en región de tipo 3]
     
-    (1 punto) Evalúe la integral \[ \int_{1}^{2} \int_{0}^{\ln y} (y-1) \sqrt{1 + \mathrm{e}^{2x}} \: \mathrm{d}x \: \mathrm{d}y. \] No omita ningún paso en su solución.
+    (1 punto) Calcule analíticamente la integral \[ \int_{1}^{2} \int_{0}^{\log y} (y-1) \sqrt{1 + \mathrm{e}^{2x}} \: \mathrm{d}x \: \mathrm{d}y. \] No utilice aproximaciones numéricas ni herramientas computacionales. No omita ningún paso en su solución.
 
 
 \vspace{1em}
@@ -69,13 +74,14 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
     La región \(D\), expresada como región de tipo 2, es el conjunto
     \[D = \{(x, y) | 0 \leq x \leq \ln y \ \land \ 1 \leq y \leq 2\}.\]
     Un bosquejo de la región se muestra en la figura \ref{fig:region-tipo-3}.
-    \begin{figure}[H]
-        \centering
-        % \includegraphics[width=0.5\textwidth]{region-tipo-3.png}
-        \caption{Región de integración \(D\).}
-        \label{fig:region-tipo-3}
-    \end{figure}
 
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{region-tipo-3.png}
+        \captionof{figure}{Región de integración \(D\).}
+        \label{fig:region-tipo-3}
+    \end{center}
+
+    \vspace{1em}
     A partir del bosquejo, resulta evidente que \(D\) efectivamente es una región de tipo 3, pues también se puede expresar como región de tipo 1, delimitada por un intervalo numérico en el eje \(x\) y por curvas continuas en el eje \(y\). Se expresa la curva \(x = \ln y\) como \(y = \mathrm{e}^x\), de forma que \(D\) se puede expresar como
     \[D = \{(x, y) | 0 \leq x \leq \ln 2 \ \land \ \mathrm{e}^x \leq y \leq 2\}.\]
     Por lo tanto, la integral se puede reescribir como
@@ -169,6 +175,67 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
         \int_D f &= I_1 - I_2 \\
         &= \sqrt{5} + \frac{\ln(\sqrt{5} + 2)}{2}  - \frac{\sqrt{2}}{2}  - \frac{\ln(\sqrt{2} + 1)}{2} - \frac{5 \sqrt{5} - 2 \sqrt{2}}{6}.
     \end{align*}
+\end{problema}
+
+
+\section{Integrales triples}
+
+\begin{problema}[Masa y centro de masa]
+    
+    (1 punto) Considere los paraboloides \(z = 10 - x^2 - y^2\) y \(z = 6 + x^2 + y^2\). Suponga que \(R\) es el sólido cuya forma está dada por la región encerrada por esos paraboloides. Si \(R\) presenta una densidad uniforme de \(8 \: \text{kg} \: \text{m}^{-3}\), indique cuál es la masa de \(R\) y cuál es la coordenada \(z\) de su centro de masa.
+
+
+\vspace{1em}
+\tcblower
+\textbf{Solución:}
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{interseccion-paraboloides.png}
+    \captionof{figure}{Región encerrada por los paraboloides \(z = 10 - x^2 - y^2\) y \(z = 6 + x^2 + y^2\).}
+    \label{fig:interseccion-paraboloides}
+\end{center}
+
+\end{problema}
+
+
+\section{Integrales de línea}
+
+\begin{problema}[Densidad lineal y masa de varilla metálica]
+    
+    (1 punto) Considere una varilla metálica de \(5\) metros. Suponga que la varilla no tiene densidad uniforme y que su densidad lineal está modelada por la función \(\rho(x, y) = x^2 + 2y^2\), medida en \(\text{kg} \: \text{m}^{-1}\). Si la varilla está ubicada en el plano \(xy\), de forma que toca los dos ejes y su centro geométrico es el punto \(\left(2, \frac{3}{2}\right)\), indique cuál es la masa de la varilla.
+
+
+\vspace{1em}
+\tcblower
+\textbf{Solución:}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{varilla.png}
+    \captionof{figure}{Varilla de \(5\) metros con centro geométrico en \((2, \frac{3}{2})\).}
+    \label{fig:varilla}
+\end{center}
+
+
+\end{problema}
+
+
+\section{Integrales de superficie}
+
+\begin{problema}[Área de helicoide]
+    
+    (1 punto) Considere la región \(R\) definida en coordenadas polares como \[R = \{(\theta, r) \colon 0 \leq \theta \leq 2\uppi \ \land \ 0 \leq r \leq 1\}.\] Halle el área de \(\bvec{F}\colon D\to \mathbb{R}^3\), que es la helicoide dada por \[\begin{cases}
+        x = r\cos\theta, \\
+        y = r\sin\theta, \\
+        z = \theta.
+    \end{cases}\]
+
+
+\vspace{1em}
+\tcblower
+\textbf{Solución:}
+
+
+
 \end{problema}
 
 \end{document}
