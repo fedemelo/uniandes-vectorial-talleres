@@ -48,7 +48,6 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
     
     (1 punto) Corrija todos los errores que tuvo su grupo en el taller 1. Si no tuvo errores, omita este punto.
 
-    \vspace{1em}
     \tcblower
     
     En este punto simplemente revisaré que se hayan corregido los errores y abordado los comentarios que dejé en su taller. Naturalmente, la corrección debe ser correcta, sobretodo teniendo en cuenta que el solucionario del taller 1 está en Bloque Neón desde el domingo 23 de junio.
@@ -61,8 +60,6 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
     
     (1 punto) Calcule analíticamente la integral \[ \int_{1}^{2} \int_{0}^{\log y} (y-1) \sqrt{1 + \mathrm{e}^{2x}} \: \mathrm{d}x \: \mathrm{d}y. \] No utilice aproximaciones numéricas ni herramientas computacionales. No omita ningún paso en su solución.
 
-
-\vspace{1em}
 \tcblower
 \textbf{Solución:}
 
@@ -183,17 +180,103 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
 \begin{problema}[Masa y centro de masa]
     
     (1 punto) Considere los paraboloides \(z = 10 - x^2 - y^2\) y \(z = 6 + x^2 + y^2\). Suponga que \(R\) es el sólido cuya forma está dada por la región encerrada por esos paraboloides. Si \(R\) presenta una densidad uniforme de \(8 \: \text{kg} \: \text{m}^{-3}\), indique cuál es la masa de \(R\) y cuál es la coordenada \(z\) de su centro de masa.
-
-
-\vspace{1em}
 \tcblower
-\textbf{Solución:}
+\textbf{Solución:}\\
+
+Primeramente, es importante identificar las herramientas matemáticas que se necesitan para resolver este problema. En esencia, se busca calcular la masa y el centro de masa de un sólido \(R\) con densidad uniforme. Para ello, resulta útil recordar que tanto la masa como el centro de masa se pueden calcular mediante integrales triples sobre el sólido. En particular, la masa de un sólido con densidad uniforme se puede calcular mediante la integral,
+\[m_R = \int_{R} \rho(x,y,z) \: \mathrm{d}x \: \mathrm{d}y \: \mathrm{d}z,\]
+y la coordenada \(z\) del centro de masa, que denoto por \(\bar{z}\), se puede calcular mediante la integral,
+\[\bar{z} = \frac{\int_{R} z\rho(x,y,z) \: \mathrm{d}x \: \mathrm{d}y \: \mathrm{d}z}{\int_{R} \rho(x,y,z) \: \mathrm{d}x \: \mathrm{d}y \: \mathrm{d}z}.\]
+\vspace*{1em}
+
+Con eso en mente, un prerrequisito para plantear las integrales es poder describir la región tridimensional encerrada por los dos paraboloides. Para ello, resulta útil hacer un bosquejo de la región. Es fácil imaginarse las gráficas si se da cuenta de que ambos paraboloides son traslaciones del paraboloide \(z = x^2 + y^2\) en el eje \(z\). En particular, el paraboloide \(z = 6 + x^2 + y^2\) es una traslación de \(z = x^2 + y^2\) en \(z = 6\), mientras que el paraboloide \(z = 10 - (x^2 + y^2)\) es una traslación de \(z = -(x^2 + y^2)\), el paraboloide que abre hacia abajo, en \(z = 10\). Eso permite llegar rápidamente a un bosquejo de la región como el que se muestra en la figura \ref{fig:interseccion-paraboloides}.
 
 \begin{center}
     \includegraphics[width=0.6\textwidth]{interseccion-paraboloides.png}
     \captionof{figure}{Región encerrada por los paraboloides \(z = 10 - x^2 - y^2\) y \(z = 6 + x^2 + y^2\).}
     \label{fig:interseccion-paraboloides}
 \end{center}
+\vspace*{1em}
+Resulta evidente que la región presenta simetría cilíndrica con respecto al eje \(z\). Por ende, será más sencillo describir la región mediante coordenadas cilíndricas. En coordenadas cilíndricas, note que:
+\begin{itemize}
+    \item El paraboloide \(z = 10 - x^2 - y^2\) se expresa como \(z = 10 - r^2\). Recuerde que el radio polar está dado por el teorema de Pitágoras como \(r = \sqrt{x^2 + y^2}\).
+    \item El paraboloide \(z = 6 + x^2 + y^2\) se expresa como \(z = 6 + r^2\).
+\end{itemize}
+\vspace*{1em}
+Para definir la región \(R\) en coordenadas cilíndricas, note que:
+\begin{itemize}
+    \item El ángulo polar \(\theta\) varía en el intervalo \([0, 2\uppi]\), pues la región recorre una revolución completa en torno al eje \(z\).
+    \item El radio polar \(r\) varía en el intervalo \([0, r_0]\), donde \(r_0\) es el radio de la intersección entre los dos paraboloides. Para hallar \(r_0\) la intersección de los paraboloides, se igualan sus ecuaciones:
+    \begin{align*}
+        10 - x^2 - y^2 &= 6 + x^2 + y^2 \\
+        4 &= 2x^2 + 2y^2 \\
+        2 &= x^2 + y^2.
+    \end{align*}
+    La ecuación resultante tiene una forma muy familiar, a saber, \(x^2+y^2 = r^2\), que es la ecuación de un círculo con radio \(r\) centrado en el origen. Así, la intersección entre los dos paraboloides es el círculo de radio \(\sqrt{2}\) centrado en el origen. Por consiguiente, la región \(r\) varía en el intervalo \([0, \sqrt{2}]\).
+    \item La coordenada \(z\) varía en el intervalo \([6 + r^2, 10 - r^2]\), pues la región está encerrada entre los dos paraboloides.
+\end{itemize}
+A partir de eso, se puede describir la región encerrada por los dos paraboloides en coordenadas polares como
+\[R = \{(r, \theta, z) | 0 \leq \theta \leq 2\uppi \ \land \ 0 \leq r \leq \sqrt{2} \ \land \ 6 + r^2 \leq z \leq 10 - r^2\}.\]
+Solo queda pendiente un detalle para plantear la integral de la masa y el centro de masa: recordar que, al realizar un cambio de coordenadas, se debe incluir en la integral una medida de la distorsión del volumen a causa de la transformación. Dicha medida es el valor absoluto del jacobiano, que para las coordenadas cilíndricas es \(r\). Lo puede calcular como el determinante de la matriz de derivadas parciales de la función de transformación de coordenadas (pero le sugiero que, por lo menos durante este curso, ¡se sepa los jacobianos comunes de memoria!).\\
+
+Teniendo todo eso en cuenta, la integral de la masa se puede plantear como
+\[m_R = \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta.\]
+
+Por otro lado, la integral de la coordenada \(z\) del centro de masa se puede plantear como
+\[\bar{z} = \frac{\int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} z \cdot 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta}{\int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta}.\]
+
+Ambas son integrales triples muy sencillas. Calculo primero la integral correspondiente a la masa:
+\begin{align*}
+    m_R &= \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \left. z \right\vert_{6 + r^2}^{10 - r^2} \: r \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} (10 - r^2 - 6 - r^2) \: r \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} (4 - 2r^2) \: r \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} (4r - 2r^3) \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} \left. \left(2r^2 - \frac{2r^4}{4}\right) \right\vert_{0}^{\sqrt{2}} \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} \left(2 \cdot 2 - \frac{2 \cdot 2^2}{4}\right) \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} (4 - 2) \: \mathrm{d}\theta \\
+    &= 8 \int_{0}^{2\uppi} 2 \: \mathrm{d}\theta \\
+    &= 8 \cdot 2 \cdot \left.\theta \right\vert_{0}^{2\uppi} \\
+    &= 8 \cdot 2 \cdot 2\uppi \\
+    &= 32\uppi.
+\end{align*}
+
+Con eso, se llega a la primera conclusión:
+\begin{gbox}
+    La masa del sólido \(R\) es de \(32\uppi \: \text{kg}\).
+\end{gbox}
+\vspace*{1em}
+Ahora, antes de calcular la integral de la coordenada \(z\) del centro de masa, quiero mencionar que muchas veces en matemática, vale la pena frenar y pensar en caminos alternativos para el problema. Fortuitamente, este es un ejemplo de problema en el cual, si piensa fuera de la caja, puede hallar una idea que le permite ahorrarse el cálculo por completo.
+
+\vspace*{1em}
+Recordará de sus clases de Física 1 que, si un sólido tiene densidad uniforme, entonces su centro de masa coincide con su centroide geométrico. El centroide geométrico de la región en cuestión es particularmente fácil de hallar, por dos razones:
+\begin{itemize}
+    \item La región es simétrica con respecto al plano \(z = 8\), que es el punto medio entre las alturas de los dos paraboloides. Para darse cuenta de esto, note que, como ya se mencionó, ambos paraboloides tienen forma idéntica: solo difieren en su altura y en la dirección en la que abren. Como uno abre hacia arriba en \(z = 6\) y el otro hacia abajo en \(z = 10\), la mitad de la figura en el eje \(z\) tendrá que ser el punto medio entre esas dos alturas, \(z = 8\).
+    \item Para un sólido con simetría cilíndrica, naturalmente el centroide geométrico estará en su eje de simetría. En este caso, el eje de simetría es el eje \(z\).
+\end{itemize}
+Ergo, el centroide geométrico, que es en este caso es también el centro de masa, es el punto \((0, 0, 8)\). Con eso, se llega a la segunda conclusión sin necesidad alguna de cálculo vectorial:
+\begin{gbox}
+    La coordenada \(z\) del centro de masa del sólido \(R\) es \(8\).
+\end{gbox}
+
+Por completitud, y para demostrar que el ejercicio es perfectamente factible sin tener presente ese detalle, a continuación hago el cálculo de la integral de la coordenada \(z\) del centro de masa:
+
+\begin{align*}
+    \bar{z} &= \frac{\int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} z \cdot 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta}{\int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta} \\
+    &= \frac{8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \left. \frac{z^2}{2} \right\vert_{6 + r^2}^{10 - r^2} \: r \: \mathrm{d}r \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \left( \frac{(10 - r^2)^2}{2} - \frac{(6 + r^2)^2}{2} \right) \: r \: \mathrm{d}r \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \left( \frac{100 - 20r^2 + r^4}{2} - \frac{36 + 12r^2 + r^4}{2} \right) \: r \: \mathrm{d}r \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \left( \frac{64 - 32r^2}{2} \right) \: r \: \mathrm{d}r \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} (32r - 16r^3) \: \mathrm{d}r \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} \left. (16r^2 - 4r^4) \right\vert_{0}^{\sqrt{2}} \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} (16 \cdot 2 - 4 \cdot 2^2) \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} (32 - 16) \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \int_{0}^{2\uppi} 16 \: \mathrm{d}\theta}{32\uppi} \\
+    &= \frac{8 \cdot 16 \cdot 2\uppi}{32\uppi} \\
+    &= 8.
+\end{align*}
+
+Eso ratifica la conclusión ya enunciada.
 
 \end{problema}
 
