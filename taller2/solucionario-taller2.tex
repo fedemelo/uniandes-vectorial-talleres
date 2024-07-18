@@ -14,7 +14,7 @@
 
 \begin{document}
 
-TODO: Fecha. Jueves, 13 de junio de 2024
+Miércoles, 10 de julio de 2024
 
 \begin{center}
     \textbf{\LARGE \title} \\
@@ -29,14 +29,14 @@ Monitor: Federico Melo Barrero, \href{mailto:f.melo@uniandes.edu.co}{f.melo@unia
 
 Las instrucciones referentes a la entrega del taller están escritas en \href{https://bloqueneon.uniandes.edu.co/d2l/home}{Bloque Neón}.
 
-\textbf{Bonos}
+\subsection*{Bonos}
 \begin{itemize}
-  \item Se sumarán 0.5 puntos de bonificación a la nota del taller si su contenido está ordenado y puede leerse con facilidad.
-  \item Se sumarán 0.5 puntos de bonificación a la nota del taller si no contiene errores léxicos, gramaticales ni faltas de ortografía.
+  \item Se sumarán 0.25 puntos de bonificación a la nota del taller si su contenido está ordenado y puede leerse con facilidad.
+  \item Se sumarán 0.25 puntos de bonificación a la nota del taller si no contiene errores léxicos, gramaticales ni faltas de ortografía.
 \end{itemize}
 La nota del taller puede exceder el 5.0.
 
-\textbf{Recomendaciones}
+\subsection*{Recomendaciones}
 
 No necesita hacer uso de herramientas que le ayuden a hacer matemáticas, ya sean calculadoras, aplicaciones, grandes modelos de lenguaje u otras. Le recomiendo que no lo haga
 
@@ -58,7 +58,7 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
 
 \begin{problema}[Integral doble en región de tipo 3]
     
-    (1 punto) Calcule analíticamente la integral \[ \int_{1}^{2} \int_{0}^{\log y} (y-1) \sqrt{1 + \mathrm{e}^{2x}} \: \mathrm{d}x \: \mathrm{d}y. \] No utilice aproximaciones numéricas ni herramientas computacionales. No omita ningún paso en su solución.
+    (1 punto) Calcule analíticamente la integral \[ \int_{1}^{2} \int_{0}^{\ln y} (y-1) \sqrt{1 + \mathrm{e}^{2x}} \: \mathrm{d}x \: \mathrm{d}y. \] No utilice aproximaciones numéricas ni herramientas computacionales. No omita ningún paso en su solución.
 
 \tcblower
 \textbf{Solución:}
@@ -174,7 +174,6 @@ Recuerde incluir las unidades siempre que trate con magnitudes físicas.
     \end{align*}
 \end{problema}
 
-
 \section{Integrales triples}
 
 \begin{problema}[Masa y centro de masa]
@@ -206,7 +205,7 @@ Resulta evidente que la región presenta simetría cilíndrica con respecto al e
 Para definir la región \(R\) en coordenadas cilíndricas, note que:
 \begin{itemize}
     \item El ángulo polar \(\theta\) varía en el intervalo \([0, 2\uppi]\), pues la región recorre una revolución completa en torno al eje \(z\).
-    \item El radio polar \(r\) varía en el intervalo \([0, r_0]\), donde \(r_0\) es el radio de la intersección entre los dos paraboloides. Para hallar \(r_0\) la intersección de los paraboloides, se igualan sus ecuaciones:
+    \item El radio polar \(r\) varía en el intervalo \([0, r_0]\), donde \(r_0\) es el radio de la intersección entre los dos paraboloides. Para hallar la intersección de los paraboloides, se igualan sus ecuaciones:
     \begin{align*}
         10 - x^2 - y^2 &= 6 + x^2 + y^2 \\
         4 &= 2x^2 + 2y^2 \\
@@ -254,12 +253,12 @@ Recordará de sus clases de Física 1 que, si un sólido tiene densidad uniforme
     \item La región es simétrica con respecto al plano \(z = 8\), que es el punto medio entre las alturas de los dos paraboloides. Para darse cuenta de esto, note que, como ya se mencionó, ambos paraboloides tienen forma idéntica: solo difieren en su altura y en la dirección en la que abren. Como uno abre hacia arriba en \(z = 6\) y el otro hacia abajo en \(z = 10\), la mitad de la figura en el eje \(z\) tendrá que ser el punto medio entre esas dos alturas, \(z = 8\).
     \item Para un sólido con simetría cilíndrica, naturalmente el centroide geométrico estará en su eje de simetría. En este caso, el eje de simetría es el eje \(z\).
 \end{itemize}
-Ergo, el centroide geométrico, que es en este caso es también el centro de masa, es el punto \((0, 0, 8)\). Con eso, se llega a la segunda conclusión sin necesidad alguna de cálculo vectorial:
+Ergo, el centroide geométrico, que en este caso es también el centro de masa, es el punto \((0, 0, 8)\). Con eso, se llega a la segunda conclusión sin necesidad alguna de cálculo vectorial:
 \begin{gbox}
     La coordenada \(z\) del centro de masa del sólido \(R\) es \(8\).
 \end{gbox}
 
-Por completitud, y para demostrar que el ejercicio es perfectamente factible sin tener presente ese detalle, a continuación hago el cálculo de la integral de la coordenada \(z\) del centro de masa:
+Por completitud, y para demostrar que el ejercicio es perfectamente factible sin tener presente ese detalle propio de la física, a continuación hago el cálculo de la integral de la coordenada \(z\) del centro de masa:
 
 \begin{align*}
     \bar{z} &= \frac{\int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} z \cdot 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta}{\int_{0}^{2\uppi} \int_{0}^{\sqrt{2}} \int_{6 + r^2}^{10 - r^2} 8 \: r \: \mathrm{d}z \: \mathrm{d}r \: \mathrm{d}\theta} \\
@@ -280,25 +279,81 @@ Eso ratifica la conclusión ya enunciada.
 
 \end{problema}
 
-
 \section{Integrales de línea}
 
 \begin{problema}[Densidad lineal y masa de varilla metálica]
     
     (1 punto) Considere una varilla metálica de \(5\) metros. Suponga que la varilla no tiene densidad uniforme y que su densidad lineal está modelada por la función \(\rho(x, y) = x^2 + 2y^2\), medida en \(\text{kg} \: \text{m}^{-1}\). Si la varilla está ubicada en el plano \(xy\), de forma que toca los dos ejes y su centro geométrico es el punto \(\left(2, \frac{3}{2}\right)\), indique cuál es la masa de la varilla.
 
-
-\vspace{1em}
 \tcblower
-\textbf{Solución:}
+\textbf{Solución:}\\
+
+Para calcular la masa de la varilla, se puede plantear una integral de línea sobre la longitud de la varilla. En particular, la masa de un objeto con densidad lineal se puede calcular mediante la integral 
+\[m = \int_{L} \rho \: \mathrm{d}s\]
+donde \(L\) representa la varilla y \(\rho\) es la función de densidad lineal. Recuérdese por la definición de integral de línea que la integral anterior es equivalente a
+\[m = \int_{a}^{b} \rho(\bvec{r}(t)) \norm{\bvec{r}'(t)} \: \mathrm{d}t\]
+donde \(\bvec{r}(t)\) es un vector que describe la posición de un punto en la varilla en función de un parámetro \(t\). Por ende, para plantear la integral de la masa de la varilla, es necesario encontrar una parametrización de la varilla.\\
+
+Para parametrizar la varilla, note que matemáticamente esta es un segmento de recta. Por ende, se necesita de su punto inicial y final para formular una parametrización. Para encontrar dichos puntos a partir de la información que se tiene, una estrategia es imaginarse todas las posibles varillas que toquen ambos ejes mientras satisfacen la condición de tener centro geométrico en \((2, \frac{3}{2})\) y longitud de \(5\) metros. Note que todas las varillas que satisfacen esa condición tienen sus extremos en la circunferencia de radio \(\frac{5}{2}\) centrada en \((2, \frac{3}{2})\). Por ende, los extremos de la varilla son los puntos de intersección entre la circunferencia y cada uno de los ejes.\\
+
+Recordando que la ecuación de una circunferencia con radio \(r\) centrada en el punto \((a, b)\) es \((x - a)^2 + (y - b)^2 = r^2\), se puede plantear la ecuación de la circunferencia de radio \(\frac{5}{2}\) centrada en \((2, \frac{3}{2})\) como
+\[(x - 2)^2 + \left(y - \frac{3}{2}\right)^2 = \left(\frac{5}{2}\right)^2.\]
+Para hallar los puntos de intersección con el eje \(x\), se puede plantear el sistema de ecuaciones
+\[\begin{cases}
+    (x - 2)^2 + \left(y - \frac{3}{2}\right)^2 = \left(\frac{5}{2}\right)^2, \\
+    y = 0,
+\end{cases}\]
+Cuya solución radica simplemente en reemplazar \(y = 0\) en la ecuación de la circunferencia, obteniendo dos soluciones para \(x\): \(x = 0\) y \(x = 4\). Por ende, los puntos de intersección con el eje \(x\) son \((0, 0)\) y \((4, 0)\). De forma análoga, para hallar los puntos de intersección con el eje \(y\), se puede plantear el sistema de ecuaciones
+\[\begin{cases}
+    (x - 2)^2 + \left(y - \frac{3}{2}\right)^2 = \left(\frac{5}{2}\right)^2, \\
+    x = 0,
+\end{cases}\]
+que se soluciona con el mismo principio, obteniendo \(y = 0\) y \(y = 3\). Por ende, los puntos de intersección entre la circunferencia y los ejes son \((0, 0)\), \((4, 0)\), \((0, 3)\) y solo esos puntos pueden ser posibles extremos de la varilla. Dado que la varilla debe pasar por el centro geométrico, los extremos de la varilla deben ser, necesariamente, \((0, 3)\) y \((4, 0)\). Este raciocinio se resume gráficamente en la figura \ref{fig:varilla}.\\
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{varilla.png}
     \captionof{figure}{Varilla de \(5\) metros con centro geométrico en \((2, \frac{3}{2})\).}
     \label{fig:varilla}
 \end{center}
+\vspace*{1em}
 
+Con los extremos de la varilla identificados, se puede plantear una parametrización de la varilla. Una parametrización común para un segmento de recta es plantear la ecuación de la recta que pasa por los dos puntos y luego expresarla en función de un parámetro \(t\) que tome el rol del eje \(x\). Para plantear la ecuación de la recta, se calcula la pendiente,
+\[m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{0 - 3}{4 - 0} = -\frac{3}{4},\]
+y se usa la fórmula punto-pendiente para plantear la ecuación de la recta:
+\[y - y_1 = m(x - x_1) \implies y = -\frac{3}{4}x + 3.\]
+Con eso, si se toma \(t = x\), se puede parametrizar la varilla como
+\[\bvec{r}(t) = \begin{pmatrix}
+    t \\
+    -\frac{3}{4}t + 3
+\end{pmatrix}\]
+donde \(t\) varía en el intervalo \([0, 4]\). Una forma fácil de verificar la parametrización es reemplazar los extremos de la varilla en la ecuación de la recta para ver si se obtienen los puntos correctos.\\
 
+Habiendo formulado la parametrización de la varilla, se puede plantear la integral de la masa de la varilla como
+\[m = \int_{0}^{4} \rho(\bvec{r}(t)) \norm{\bvec{r}'(t)} \: \mathrm{d}t.\]
+Para evaluar la integral, se necesita calcular \(\rho(\bvec{r}(t))\) y \(\norm{\bvec{r}'(t)}\). Para el primer término, se tiene que
+\[\rho(\bvec{r}(t)) = x^2 + 2y^2 = t^2 + 2\left(-\frac{3}{4}t + 3\right)^2.\]
+Para el segundo término, se tiene que
+\[\norm{\bvec{r}'(t)} = \norm{\begin{pmatrix}
+    1 \\
+    -\frac{3}{4}
+\end{pmatrix}} = \sqrt{1 + \left(-\frac{3}{4}\right)^2} = \frac{5}{4} \: \text{m}.\]
+donde ese valor está medido en metros. Con eso, se puede plantear la integral de la masa de la varilla como
+\begin{align*}
+    m &= \int_{0}^{4} \rho(\bvec{r}(t)) \norm{\bvec{r}'(t)} \: \mathrm{d}t \\
+    &= \int_{0}^{4} \left(t^2 + 2\left(-\frac{3}{4}t + 3\right)^2\right) \cdot \frac{5}{4} \: \mathrm{d}t \\
+    &= \frac{5}{4} \int_{0}^{4} t^2 + 2\left(-\frac{3}{4}t + 3\right)^2 \: \mathrm{d}t \\
+    &= \frac{5}{4} \int_{0}^{4} t^2 + 2\left(\frac{9}{16}t^2 - \frac{9}{2}t + 9\right) \: \mathrm{d}t \\
+    &= \frac{5}{4} \int_{0}^{4} t^2 + \frac{9}{8}t^2 - 9t + 18 \: \mathrm{d}t \\
+    &= \frac{5}{4} \int_{0}^{4} \frac{17}{8}t^2 - 9t + 18 \: \mathrm{d}t \\
+    &= \frac{5}{4} \left. \left(\frac{17}{24}t^3 - \frac{9}{2}t^2 + 18t\right) \right\vert_{0}^{4} \\
+    &= \frac{5}{4} \left(\frac{17}{24} \cdot 4^3 - \frac{9}{2} \cdot 4^2 + 18 \cdot 4\right) \\
+    m &= \frac{170}{3} \: \text{kg}.
+\end{align*}
+
+Con eso, se llega a la conclusión:
+\begin{gbox}
+    La masa de la varilla es de \(\frac{170}{3} \: \text{kg}\).
+\end{gbox}
 \end{problema}
 
 
@@ -306,16 +361,89 @@ Eso ratifica la conclusión ya enunciada.
 
 \begin{problema}[Área de helicoide]
     
-    (1 punto) Considere la región \(R\) definida en coordenadas polares como \[R = \{(\theta, r) \colon 0 \leq \theta \leq 2\uppi \ \land \ 0 \leq r \leq 1\}.\] Halle el área de \(\bvec{F}\colon D\to \mathbb{R}^3\), que es la helicoide dada por \[\begin{cases}
+    (1 punto) Considere la región \(R\) definida en coordenadas polares como \[R = \{(\theta, r) \colon 0 \leq \theta \leq 2\uppi \ \land \ 0 \leq r \leq 1\}.\] Halle el área de \(\bvec{F}\colon R\to \mathbb{R}^3\), que es la helicoide dada por \[\begin{cases}
         x = r\cos\theta, \\
         y = r\sin\theta, \\
         z = \theta.
     \end{cases}\]
 
-
-\vspace{1em}
 \tcblower
-\textbf{Solución:}
+\textbf{Solución:}\\
+
+Note que la helicoide es una superficie parametrizada por \(\bvec{F}\colon R \to \mathbb{R}^3\), donde \(R\) es la región dada en coordenadas polares. Para hallar el área \(A\) de la superficie recuerde que, por definición, esta dada por la siguiente integral:
+\[A = \int_{R} \norm{\bvec{F}_r \times \bvec{F}_\theta} \: \mathrm{d}A.\]
+donde los vectores \(\bvec{F}_r\) y \(\bvec{F}_\theta\) hacen referencia a
+\[\bvec{F}_r = \parder[x][r](r, \theta) \uvec{i} + \parder[y][r](r, \theta) \uvec{j} + \parder[z][r](r, \theta) \uvec{k} \quad \text{y} \quad \bvec{F}_\theta = \parder[x][\theta](r, \theta) \uvec{i} + \parder[y][\theta](r, \theta) \uvec{j} + \parder[z][\theta](r, \theta) \uvec{k}.\]
+Recuerde también que una simplificación de la fórmula dada, resultante de extender el producto cruz y expresar su norma, es
+\[A = \int_{R} \sqrt{\left(\parder[(x, y)][(r, \theta)]\right)^2 + \left(\parder[(y, z)][(r, \theta)]\right)^2 + \left(\parder[(x, z)][(r, \theta)]\right)^2} \: \mathrm{d}A.\]
+Hasta ahora, lo anterior es válido para cualquier superficie parametrizada. Es decir, todo lo dicho sobre este problema hasta este punto es un recordatorio de conocimientos que ya deberían tener presentes. \\
+
+Para hallar el área de la helicoide, se calculan los jacobianos de la fórmula con base en la parametrización dada. En particular, para el primer jacobiano, se tiene que
+\begin{align*}
+    \parder[(x, y)][(r, \theta)] &= \begin{vmatrix}
+        \dparder[x][r] & \dparder[x][\theta] \\
+        \dparder[y][r] & \dparder[y][\theta]
+    \end{vmatrix} \\
+    &= \parder[x][r] \cdot \parder[y][\theta] - \parder[x][\theta] \cdot \parder[y][r] \\
+    &= \cos\theta \cdot r\cos\theta - \sin\theta \cdot r(-\sin\theta)\\
+    &= r\cos^2\theta + r\sin^2\theta \\
+    &= r ( \cos^2\theta + \sin^2\theta ) \\
+    &= r.
+\end{align*}
+Para el segundo jacobiano, se tiene que
+\begin{align*}
+    \parder[(y, z)][(r, \theta)] &= \begin{vmatrix}
+        \dparder[y][r] & \dparder[y][\theta] \\
+        \dparder[z][r] & \dparder[z][\theta]
+    \end{vmatrix} \\
+    &= \parder[y][r] \cdot \parder[z][\theta] - \parder[y][\theta] \cdot \parder[z][r] \\
+    &= \sin\theta \cdot 1 - r\cos\theta \cdot 0 \\
+    &= \sin\theta.
+\end{align*}
+Para el tercer jacobiano, se tiene que
+\begin{align*}
+    \parder[(x, z)][(r, \theta)] &= \begin{vmatrix}
+        \dparder[x][r] & \dparder[x][\theta] \\
+        \dparder[z][r] & \dparder[z][\theta]
+    \end{vmatrix} \\
+    &= \parder[x][r] \cdot \parder[z][\theta] - \parder[x][\theta] \cdot \parder[z][r] \\
+    &= \cos\theta \cdot 1 - r\sin\theta \cdot 0 \\
+    &= \cos\theta.
+\end{align*}
+
+Reemplazando esos jacobianos en la fórmula del área, se plantea el área de la helicoide como
+\begin{align*}
+    A &= \int_{R} \sqrt{\left(\parder[(x, y)][(r, \theta)]\right)^2 + \left(\parder[(y, z)][(r, \theta)]\right)^2 + \left(\parder[(x, z)][(r, \theta)]\right)^2} \: \mathrm{d}A \\
+    &= \int_{0}^{2\uppi} \int_{0}^{1} \sqrt{r^2 + \sin^2\theta + \cos^2\theta} \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= \int_{0}^{2\uppi} \int_{0}^{1} \sqrt{r^2 + 1} \: \mathrm{d}r \: \mathrm{d}\theta.
+\end{align*}
+Donde la región de integración está dada por el enunciado del problema. \\
+
+La integral resultante consiste de una suma de cuadrados dentro de un radical. Por ende, es razonable optar por sustitución trigonométrica para resolverla. En particular, realizo la sustitución \(r = \tan u\), de modo que \(\mathrm{d}r = \sec^2 u \: \mathrm{d}u\). Los límites se actualizan acorde: para el límite inferior, se tiene que \(u = \arctan(0) = 0\), y para el límite superior, se tiene que \(u = \arctan(1) = \frac{\uppi}{4}\). Con eso, la integral se convierte en
+\begin{align*}
+    A &= \int_{0}^{2\uppi} \int_{0}^{1} \sqrt{r^2 + 1} \: \mathrm{d}r \: \mathrm{d}\theta \\
+    &= \int_{0}^{2\uppi} \: \mathrm{d}\theta \int_{0}^{\frac{\uppi}{4}} \sqrt{\tan^2 u + 1} \cdot \sec^2 u \: \mathrm{d}u \\
+    &= \theta \vert_{0}^{2\uppi} \int_{0}^{\frac{\uppi}{4}} \sqrt{\sec^2 u} \cdot \sec^2 u \: \mathrm{d}u \\
+    &= 2\uppi \int_{0}^{\frac{\uppi}{4}} \sec^3 u \: \mathrm{d}u.
+\end{align*}
+La resolución analítica de la integral indefinida de secante cúbica se realizó en el segundo ejercicio. Se obtuvo que
+\[\int \sec^3 u \: \mathrm{d}u = \frac{1}{2} \left( \sec u \tan u + \ln \left| \sec u + \tan u \right| \right) + C.\]
+Reemplazando eso en la integral de área, se obtiene
+\begin{align*}
+    A &= 2\uppi \int_{0}^{\frac{\uppi}{4}} \sec^3 u \: \mathrm{d}u \\
+    &= 2\uppi \left. \left( \frac{1}{2} \left( \sec u \tan u + \ln \left| \sec u + \tan u \right| \right) \right) \right\vert_{0}^{\frac{\uppi}{4}} \\
+    &= 2\uppi \left( \frac{1}{2} \left( \sec\left(\frac{\uppi}{4}\right) \tan\left(\frac{\uppi}{4}\right) + \ln \left| \sec\left(\frac{\uppi}{4}\right) + \tan\left(\frac{\uppi}{4}\right) \right| \right) - \frac{1}{2} \left( \sec(0) \tan(0) + \ln \left| \sec(0) + \tan(0) \right| \right) \right) \\
+    &= 2\uppi \left( \frac{1}{2} \left( \sqrt{2} \cdot 1 + \ln \left| \sqrt{2} + 1 \right| \right) - \frac{1}{2} \left( 1 \cdot 0 + \ln \left| 1 + 0 \right| \right) \right) \\
+    &= 2\uppi \left( \frac{1}{2} \left( \sqrt{2} + \ln \left( \sqrt{2} + 1 \right) \right) - \frac{1}{2} \left( 0 + 0 \right) \right) \\
+    &= \uppi \left( \sqrt{2} + \ln \left( \sqrt{2} + 1 \right) \right).
+\end{align*}
+Con ese resultado, es posible concluir que
+\begin{gbox}
+    El área de la helicoide es de \(\uppi \left( \sqrt{2} + \ln \left( \sqrt{2} + 1 \right) \right)\) unidades cuadradas.
+\end{gbox}
+
+
+
 
 
 
